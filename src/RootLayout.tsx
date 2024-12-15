@@ -1,9 +1,31 @@
-import { Outlet, NavLink } from "react-router";
+import { useEffect } from "react";
+import { Outlet, NavLink, useLocation } from "react-router";
 
 import Logo from "./assets/shared/logo.svg";
 import IconHamburger from "./assets/shared/icon-hamburger.svg";
 
+const routeBackgroundClasses: Record<string, string> = {
+  "/": "home",
+  "/destination": "destination",
+  "/crew": "crew",
+  "/technology": "technology",
+};
+
 function RootLayout() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const backgroundClass =
+      routeBackgroundClasses[location.pathname] || "default";
+
+    document.body.className = "";
+    document.body.classList.add(backgroundClass);
+
+    return () => {
+      document.body.className = "";
+    };
+  }, [location.pathname]);
+
   return (
     <>
       <header className="flex items-center justify-between p-4">

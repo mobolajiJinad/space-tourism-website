@@ -2,8 +2,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 
 import "./index.css";
-import Home from "./pages/Home.tsx";
 import RootLayout from "./RootLayout.tsx";
+import Home from "./pages/Home.tsx";
 
 const root = document.getElementById("root") as HTMLElement;
 
