@@ -18,8 +18,8 @@
 }
 
 body {
-  margin: auto;
-  max-width: 1024px;
+  margin: 0;
+  padding: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,6 +39,11 @@ body.crew {
 
 body.technology {
   background-image: url("./assets/technology/background-technology-desktop.jpg");
+}
+
+#root {
+  margin: auto;
+  max-width: 1024px;
 }
 
 @media (max-width: 1024px) {
