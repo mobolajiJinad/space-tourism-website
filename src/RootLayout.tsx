@@ -14,12 +14,12 @@ const routeBackgroundClasses: Record<string, string> = {
 
 function RootLayout() {
   const location = useLocation();
+  const pathname = `/${location.pathname.split("/")[1]}`;
 
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const backgroundClass =
-      routeBackgroundClasses[location.pathname] || "default";
+    const backgroundClass = routeBackgroundClasses[pathname] || "default";
 
     document.body.className = "";
     document.body.classList.add(backgroundClass);

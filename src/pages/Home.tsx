@@ -17,7 +17,7 @@ function Home() {
         </p>
       </div>
 
-      <button className="h-40 w-40 rounded-full bg-white text-base text-blue-900 md:text-lg lg:text-xl">
+      <button className="h-32 w-32 rounded-full bg-white text-base font-medium uppercase text-blue-900 md:text-lg lg:h-40 lg:w-40 lg:text-xl">
         Explore
       </button>
     </div>
