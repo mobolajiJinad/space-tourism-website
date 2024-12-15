@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Outlet, NavLink, useLocation } from "react-router";
 
-import Logo from "./assets/shared/logo.svg";
-import IconHamburger from "./assets/shared/icon-hamburger.svg";
-import IconClose from "../src/assets/shared/icon-close.svg";
+import Logo from "/assets/shared/logo.svg";
+import IconHamburger from "/assets/shared/icon-hamburger.svg";
+import IconClose from "/assets/shared/icon-close.svg";
 
 const routeBackgroundClasses: Record<string, string> = {
   "/": "home",
