@@ -27,11 +27,11 @@ function RootLayout() {
     return () => {
       document.body.className = "";
     };
-  }, [location.pathname]);
+  }, [pathname]);
 
   return (
     <>
-      <header className="flex items-center justify-between p-4 md:py-8 md:pl-8 md:pr-0">
+      <header className="flex items-center justify-between p-4 md:py-6 md:pl-6 md:pr-0">
         <img src={Logo} alt="logo" />
 
         <img
