@@ -43,7 +43,7 @@ body.technology {
 
 #root {
   margin: auto;
-  max-width: 1024px;
+  max-width: 1152px;
 }
 
 @media (max-width: 1024px) {

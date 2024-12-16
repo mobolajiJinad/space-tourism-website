@@ -7,7 +7,7 @@ function Destination() {
   const [activeDestination, setActiveDestination] = useState(destinations[0]);
 
   return (
-    <div className="mx-auto flex min-h-[calc(100vh-80px)] w-full flex-col items-center justify-center p-4 md:min-h-[calc(100vh-144px)] md:max-w-3xl lg:max-w-4xl lg:flex-row lg:justify-between">
+    <div className="mx-auto flex min-h-[calc(100vh-80px)] w-11/12 max-w-6xl flex-col items-center justify-center gap-4 p-4 lg:flex-row lg:justify-around lg:px-8">
       <div className="my-8">
         <h1 className="my-2 text-center text-xl uppercase text-blue-100 md:text-2xl lg:text-3xl">
           01 Pick your destination
@@ -25,15 +25,11 @@ function Destination() {
           {destinations.map((destination) => (
             <li
               key={destination.name}
-              className={"cursor-pointer"}
-              style={{
-                textDecoration:
-                  activeDestination.name === destination.name
-                    ? "underline"
-                    : "none",
-                textUnderlineOffset:
-                  activeDestination.name === destination.name ? "1.25rem" : "0",
-              }}
+              className={`cursor-pointer ${
+                activeDestination.name === destination.name
+                  ? "underline underline-offset-[1.25rem]"
+                  : ""
+              } hover:underline hover:underline-offset-[1.25rem]`}
               onClick={() => setActiveDestination(destination)}
             >
               {destination.name}

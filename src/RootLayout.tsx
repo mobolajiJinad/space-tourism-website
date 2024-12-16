@@ -29,6 +29,20 @@ function RootLayout() {
     };
   }, [pathname]);
 
+  const NavItem = ({ to, label }: { to: string; label: string }) => (
+    <NavLink
+      to={to}
+      onClick={() => setMenuOpen(false)}
+      className={({ isActive }) =>
+        `relative uppercase text-blue-100 hover:underline hover:underline-offset-[1.25rem] ${
+          isActive ? "underline underline-offset-[1.25rem]" : ""
+        }`
+      }
+    >
+      {label}
+    </NavLink>
+  );
+
   return (
     <>
       <header className="flex items-center justify-between p-4 md:py-6 md:pl-6 md:pr-0">
@@ -44,48 +58,16 @@ function RootLayout() {
         <nav className="hidden max-w-3xl bg-black p-4 md:block md:w-4/5 md:bg-gray-200/10 md:p-7">
           <ul className="flex w-full items-center justify-between">
             <li>
-              <NavLink
-                to="/"
-                style={({ isActive }) => ({
-                  textDecoration: isActive ? "underline" : "none",
-                  textUnderlineOffset: isActive ? "1rem" : "0",
-                })}
-              >
-                HOME
-              </NavLink>
+              <NavItem to="/" label="00 HOME" />
             </li>
             <li>
-              <NavLink
-                to="/destination"
-                style={({ isActive }) => ({
-                  textDecoration: isActive ? "underline" : "none",
-                  textUnderlineOffset: isActive ? "1rem" : "0",
-                })}
-              >
-                01 DESTINATION
-              </NavLink>
+              <NavItem to="/destination" label="01 DESTINATION" />
             </li>
             <li>
-              <NavLink
-                to="/crew"
-                style={({ isActive }) => ({
-                  textDecoration: isActive ? "underline" : "none",
-                  textUnderlineOffset: isActive ? "1rem" : "0",
-                })}
-              >
-                02 CREW
-              </NavLink>
+              <NavItem to="/crew" label="02 CREW" />
             </li>
             <li>
-              <NavLink
-                to="/technology"
-                style={({ isActive }) => ({
-                  textDecoration: isActive ? "underline" : "none",
-                  textUnderlineOffset: isActive ? "1rem" : "0",
-                })}
-              >
-                03 TECHNOLOGY
-              </NavLink>
+              <NavItem to="/technology" label="03 TECHNOLOGY" />
             </li>
           </ul>
         </nav>
@@ -101,49 +83,10 @@ function RootLayout() {
           />
 
           <nav className="flex h-4/5 flex-col items-center justify-center gap-8">
-            <NavLink
-              to="/"
-              onClick={() => setMenuOpen(false)}
-              style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "none",
-                textUnderlineOffset: isActive ? "1rem" : "0",
-              })}
-            >
-              00 HOME
-            </NavLink>
-
-            <NavLink
-              to="/destination"
-              onClick={() => setMenuOpen(false)}
-              style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "none",
-                textUnderlineOffset: isActive ? "1rem" : "0",
-              })}
-            >
-              01 DESTINATION
-            </NavLink>
-
-            <NavLink
-              to="/crew"
-              onClick={() => setMenuOpen(false)}
-              style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "none",
-                textUnderlineOffset: isActive ? "1rem" : "0",
-              })}
-            >
-              02 CREW
-            </NavLink>
-
-            <NavLink
-              to="/technology"
-              onClick={() => setMenuOpen(false)}
-              style={({ isActive }) => ({
-                textDecoration: isActive ? "underline" : "none",
-                textUnderlineOffset: isActive ? "1rem" : "0",
-              })}
-            >
-              03 TECHNOLOGY
-            </NavLink>
+            <NavItem to="/" label="00 HOME" />
+            <NavItem to="/destination" label="01 DESTINATION" />
+            <NavItem to="/crew" label="02 CREW" />
+            <NavItem to="/technology" label="03 TECHNOLOGY" />
           </nav>
         </div>
       </header>
